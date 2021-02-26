@@ -19,7 +19,7 @@ import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory
 import com.google.android.exoplayer2.util.Util
 
 @Composable
-fun Player() {
+fun Player(modifier: Modifier) {
     val context = LocalContext.current as? Context ?: return
 
     var autoPlay = true
@@ -47,11 +47,7 @@ fun Player() {
         player
     }
 
-    fun updateState() {
-        autoPlay = player.playWhenReady
-        window = player.currentWindowIndex
-        position = 0L.coerceAtLeast(player.contentPosition)
-    }
+
 
     val playerView = remember {
          PlayerView(context)
@@ -62,8 +58,7 @@ fun Player() {
 
     AndroidView(
         factory = { playerView },
-        modifier = Modifier
-            .fillMaxWidth()
+        modifier = modifier
     ) {
         playerView.player = player
     }

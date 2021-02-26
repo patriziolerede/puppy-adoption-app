@@ -11,7 +11,6 @@ import androidx.compose.material.Surface
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.lifecycle.ViewModelProvider
-import com.example.androiddevchallenge.PuppyDetail
 import com.example.androiddevchallenge.ui.theme.MyTheme
 
 class PuppyDetailActivity : AppCompatActivity() {
