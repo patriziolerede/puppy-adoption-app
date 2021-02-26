@@ -11,7 +11,6 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -41,6 +40,7 @@ import com.example.androiddevchallenge.Puppy
 import com.example.androiddevchallenge.PuppyData
 import com.example.androiddevchallenge.R
 import com.example.androiddevchallenge.ui.theme.MyTheme
+import com.example.androiddevchallenge.ui.theme.purple200
 import dev.chrisbanes.accompanist.coil.CoilImage
 
 private const val START_TOP_PADDING = 180
@@ -66,7 +66,7 @@ fun PuppyDetail(puppy: Puppy) {
                 .verticalScroll(scrollState)
                 .padding(top = START_TOP_PADDING.dp)
                 .background(
-                    Color.LightGray,
+                    purple200,
                     CutCornerShape(topStart = 32.dp, topEnd = 32.dp)
                 )
                 .fillMaxHeight()
@@ -76,19 +76,10 @@ fun PuppyDetail(puppy: Puppy) {
             Text("Cat name:", style = MaterialTheme.typography.h6)
             Text(text = puppy.name, style = MaterialTheme.typography.h3)
             Spacer(Modifier.size(16.dp))
-            Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceEvenly) {
+            Row(Modifier.fillMaxWidth()) {
                 Detail("Breed \uD83D\uDC31", "Cat")
                 PosterCard(
-                    puppy = puppy,
-                    modifier = Modifier
-                        .padding(8.dp)
-                        .background(
-                            Color.LightGray,
-                            CutCornerShape(topStart = 32.dp, topEnd = 32.dp)
-                        )
-                        .fillMaxHeight()
-                        .fillMaxWidth()
-                        .aspectRatio(16 / 9f)
+                    puppy = puppy
                 )
                 Detail("Sex ⚤", detail = "Female")
             }
@@ -152,7 +143,6 @@ fun PosterCard(
             loading = {
                 Box(
                     modifier = Modifier
-                        .height(400.dp)
                         .fillMaxWidth()
                 ) {
                     CircularProgressIndicator(Modifier.align(Alignment.Center))
