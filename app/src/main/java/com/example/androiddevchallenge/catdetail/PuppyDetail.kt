@@ -79,9 +79,15 @@ fun PuppyDetail(puppy: Puppy) {
             Row(Modifier.fillMaxWidth()) {
                 Detail("Breed \uD83D\uDC31", "Cat")
                 PosterCard(
-                    puppy = puppy
+                    puppy = puppy,
+                    modifier = Modifier
+                        .padding(8.dp)
+                        .background(
+                            Color.LightGray,
+                            CutCornerShape(topStart = 32.dp, topEnd = 32.dp)
+                        )
+                        .aspectRatio(16 / 9f)
                 )
-                Detail("Sex ⚤", detail = "Female")
             }
             Text(text = "${puppy.name} She has lovely, long smoke-colored fur with a white patch. Her fur is like silk. Her eyes are jewel green — they shine like peridots. She is loving and affectionate but is very much “her own cat”. She loves her brother Mischa but often picks fights with him, even though she is significantly smaller. Mischa is like lightning, therefore no pictures of him as yet.\n\n$LORIM")
         }
