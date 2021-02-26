@@ -1,4 +1,4 @@
-# Put title of your app here
+# Adopt a Cat
 
 <!--- Replace <OWNER> with your Github Username and <REPOSITORY> with the name of your repository. -->
 <!--- You can find both of these in the url bar when you open your repository in github. -->
@@ -6,12 +6,11 @@
 
 
 ## :scroll: Description
-<!--- Describe your app in one or two sentences -->
+A puppy adoption sample app demonstrating building UI with compose. A submission for the #AndroidDevChallenge Jetpack Compose Week 1
 
 
 ## :bulb: Motivation and Context
-<!--- Optionally point readers to interesting parts of your submission. -->
-<!--- What are you especially proud of? -->
+I have created a Compose App with a Video Player in details. Thanks to recomposition it is very easy to create multiples views and nesting layouts. You can see this in the lazyColumn and in the detail page.
 
 
 ## :camera_flash: Screenshots
